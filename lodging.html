@@ -1,0 +1,23 @@
+<template name="lodging">
+	<div class="container">
+		{{> header}}
+			<div class="interstitial col-md-12">
+				<h1>Lodging &amp; Accommodations</h1>
+				<h3 class="normal">We have set up a room block for our out-of-town guests at the</h3>
+				<h3 class="normal hotel-link"><a href="http://www.marriott.com/hotels/travel/sfosb-courtyard-san-francisco-airport/?app=resvlink">Marriott Courtyard San Francisco Airport</a></h3>
+				<h4 class="normal">The room rate is $149/night (excluding taxes) for October 16 and October 17</h4>
+				<h4 class="normal">You are free to reserve additional nights at the market rate. Please reserve your room before 9/18/15.</h4>
+				<div class="col-md-12 reserve-now">
+					<button class="btn btn-default" id="reserveRoom">Reserve Online</button>
+				</div>
+				<div class="col-md-12">
+					<p>Or call the hotel directly at <a href="tel:6509523333">(650) 952-3333</a> and mention that you are part of the Hourany-Abungan Wedding Party</p>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<h4 class="normal">Directions to the hotel</h4>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d789.9501569303054!2d-122.420023469712!3d37.6303772816081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f79c372ab76f3%3A0xc7e01283b09239dd!2s1050+Bayhill+Dr%2C+San+Bruno%2C+CA+94066!5e0!3m2!1sen!2sus!4v1428643168302" width="600" height="450" frameborder="0" style="border:0"></iframe>
+			</div>
+		{{> footer}}
+	</div>
+</template>

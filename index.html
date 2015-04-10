@@ -1,0 +1,67 @@
+<head>
+	<title>Eugene and Lovell's Wedding Page</title>
+</head>
+
+<body>
+	
+</body>
+
+<template name="index">
+	<div class="container">
+		{{> header}}
+		<div class="content col-md-12">
+			<div class="left-column col-md-6">
+				<h1>Welcome to our wedding website</h1>
+				<p>Thank you for visiting our site. Here you'll find information related to our wedding. Please be sure to check back occasionally as we'll update it as more information becomes available.</p>
+			</div>
+			<div class="right-column col-md-6">
+				<div class="portrait"><img src="sylvias.jpg" /></div>
+			</div>
+		</div>
+		{{> footer}}
+	</div>
+</template>
+
+<template name="nav">
+	<div class="nav-container col-md-12" role="navigation">
+		<nav class="navbar">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav wedding-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="aboutus">About Us</a></li>
+					<li><a href="info">Wedding Info</a></li>
+					<li><a href="weddingparty">Wedding Party</a></li>
+					<li><a href="gallery">Gallery</a></li>
+					<li><a href="registry">Registry</a></li>
+					<li><a href="lodging">Accommodations</a></li>
+					<li><a href="contactus">Contact Us</a></li>
+					<li><a href="rsvp">RSVP</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</template>
+
+<template name="header">
+	<div class="header col-md-12">
+		<a href="/" alt="home">
+			<hr class="long-dashed" />
+			<div class="banner banner-left col-md-2 hidden-xs hidden-sm">
+				<span class="banner-image banner-left-image"></span>
+				<span>October 17th, 2015</span>
+			</div>
+			<h1 class="title1 col-md-12">Eugene &amp; Lovell</h1>
+			<div class="banner banner-right col-md-2 hidden-xs hidden-sm">
+				<span class="banner-image banner-right-image"></span>
+				<span>San Francisco, CA</span>
+			</div>
+		</a>
+	</div>
+	{{> nav}}
+</template>
+
+<template name="footer">
+	<div class="footer col-md-12">
+		<p>Website Design and Implementation by Eugene Hourany. Copyright 2015. Licensed under the <a href="http://www.wtfpl.net/">WTFPL</a></p>
+	</div>
+</template>

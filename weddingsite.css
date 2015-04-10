@@ -1,0 +1,256 @@
+/* CSS declarations go here */
+body {
+	background: rgba(0,51,51,1);
+	background: -moz-linear-gradient(top, rgba(0,51,51,1) 0%, rgba(51,102,153,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,51,51,1)), color-stop(100%, rgba(51,102,153,1)));
+	background: -webkit-linear-gradient(top, rgba(0,51,51,1) 0%, rgba(51,102,153,1) 100%);
+	background: -o-linear-gradient(top, rgba(0,51,51,1) 0%, rgba(51,102,153,1) 100%);
+	background: -ms-linear-gradient(top, rgba(0,51,51,1) 0%, rgba(51,102,153,1) 100%);
+	background: linear-gradient(to bottom, rgba(0,51,51,1) 0%, rgba(51,102,153,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003333', endColorstr='#336699', GradientType=0 );
+	margin: auto;
+	text-align: center;
+	color: #fffff0;
+	background-color: rgba(51,102,153,1);
+	background-repeat-y: no-repeat;
+}
+
+@font-face {
+	font-family: 'Cylburn';
+	src: url('Cylburn.woff') format('woff'),
+       url('Cylburn.ttf')  format('truetype');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Cylburn';
+}
+
+/********GENERAL STYLES*********/
+.loading {
+	background-image: url(ajax-loader.gif);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.normal {
+	font-family: inherit;
+}
+
+.required {
+	color: #FF0000;
+	padding-top: 10px;
+	text-align: left;
+}
+
+/********NAV STYLES*************/
+.wedding-nav {
+	border-top: 1px solid #fedbca;
+	border-bottom: 1px solid #fedbca;
+}
+
+.wedding-nav li {
+	margin: 0 12px;
+}
+
+.wedding-nav li a {
+	color: #ffd700;
+}
+
+.wedding-nav li a span.glyphicon {
+	display: none;
+}
+
+.wedding-nav li a:hover {
+	background-color: #fffff0;
+	color: #e5c100;
+}
+
+.wedding-nav li a:hover span.glyphicon {
+	display: block;
+}
+
+/********HEADER STYLES**********/
+
+.header a:hover {
+	text-decoration: none;
+}
+
+.title1 {
+	color: #fffff0;
+	margin: 15px 25px 0 0px;
+	font-family: 'Cylburn';
+	font-size: 70px;
+}
+
+.title2 {
+	color: #fffff0;
+}
+
+.long-dashed {
+	color: #ffffff;
+	border: 3px dashed #fff;
+}
+.banner {
+	position: absolute;
+	background-color: #CCAC00; /* #ffd700; */
+	padding: 10px;
+	color: #000;
+	top: 70px;
+}
+
+.banner span {
+	font-size: 19px;
+}
+
+.banner-image {
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 67px;
+	position: absolute;
+	background-position: 0px 0px;
+}
+
+.banner-left {
+	left: 0px;
+}
+
+.banner-left-image {
+	background-image: url(banner-left.png);
+	top: -20px;
+	left: -60px;
+}
+
+.banner-right {
+	right: 0px;
+}
+
+.banner-center {
+	margin: 25px auto;
+	position: relative;
+	top: inherit;
+	float: initial;
+}
+
+.banner-right-image {
+	background-image: url(banner-right.png);
+	top: -20px;
+	right: -60px;
+}
+
+.banner-container {
+	float: left;
+	background-color: #ffd700;
+	color: #000;
+	position: absolute;
+	left: 200px;
+	top: 70px;
+	padding: 10px 40px;
+}
+
+/********FOOTER STYLES**********/
+.footer p {
+	padding: 10px 0;
+	border-top: 1px solid #abcdef;
+	border-bottom: 1px solid #abcdef;
+	font-size: 9px;
+}
+
+.footer a {
+	color: #abcdef;
+}
+
+/********SLIDESHOW STYLES*******/
+.slideshow {
+	border: 0px solid #000000;
+}
+
+.slideshow .slick-slide img {
+	height: 600px;
+}
+
+.groomsmen div span, .bridesmaids div span {
+	color: #ffffff;
+	float: left;
+	width: 100%;
+	vertical-align: middle;
+}
+.groomsmen div img, .bridesmaids div img {
+	height: 300px;
+}
+
+.groomsmen.col-md-12, .bridesmaids.col-md-12 {
+}
+
+/********INDEX STYLES***********/
+.portrait img {
+	height: 540px;
+}
+
+/********ABOUT US***************/
+.interstitial {
+	/*border: 2px dotted #abcdef;*/
+}
+
+/********LODGING****************/
+.hotel-link {
+	margin-top: 10px;
+}
+.reserve-now {
+	padding: 15px 0;
+}
+/********COLUMNS****************/
+.left-column {
+	/*border: 2px dotted #ffd700;*/
+}
+
+.right-column {
+	/*border: 2px dotted #00d7ff;*/
+}
+
+/*********INFO PAGE STYLES******/
+.info .lobby-column img {
+	width: 540px;
+}
+
+.info .map-header {
+	margin-bottom: 15px;
+}
+
+/********MODAL STYLES***********/
+#myModal {
+	color: #000000;
+}
+
+/********GALLERY STYLES*********/
+.gallery .slideshow {
+	margin: auto;
+	float: inherit;
+}
+
+/********WEDDING PARTY STYLES****/
+.flower-girls p {
+	margin: 0;
+	padding: 0;
+}
+
+.flower-girls img, .ringbearer img, .musician img {
+	height: 250px;
+}
+
+.bridesmaids-top h1, .bridesmaids-top .bridesmaids {
+	margin-left: 10px;
+	font-family: 'Cylburn';
+}
+
+.groomsmen-top h1.groomsmen-title, .groomsmen-top .groomsmen {
+	margin-right: 10px;
+	float: right;
+	font-family: 'Cylburn';
+}
+
+@media (max-width: 767px) {
+	.groomsmen-top h1.groomsmen-title, .groomsmen-top .groomsmen {
+		margin-right: inherit;
+		float: inherit;
+	}
+}

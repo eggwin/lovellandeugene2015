@@ -1,0 +1,39 @@
+<template name="contactus">
+	<div class="container">
+		{{> header}}
+		<div class="content col-md-12">
+			<h3 class="normal">Contact Us</h3>
+			<div class="col-md-12">
+				{{> contactform}}
+			</div>
+		</div>
+		{{> footer}}
+	</div>
+</template>
+
+<template name="contactform">
+	<div class="thankyou col-md-12 hide">
+		<h3 class="normal">We have received your submission. Thank you.</h3>
+	</div>
+	<form class="form-horizontal">
+		<div class="form-group">
+			<label for="firstname" class="col-sm-3 control-label">Full Name</label>
+			<div class="col-sm-9">
+				<input type="text" class="form-control" id="fullname" placeholder="Please enter your first and last name"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="emailaddress" class="col-sm-3 control-label">Email Address</label>
+			<div class="col-sm-9">
+				<input type="email" class="col-sm-9 form-control" id="emailaddress" placeholder="Please enter your email address"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<h3 class="normal">Message</h3>
+			<textarea class="form-control" id="message" rows="4"></textarea>
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary contact-submit">Send it!</button>
+		</div>
+	</form>
+</template>
