@@ -190,7 +190,14 @@ h1, h2, h3, h4, h5, h6 {
 .interstitial {
 	/*border: 2px dotted #abcdef;*/
 }
-
+/********REGISTRY***************/
+.registry table {
+	margin: 30px;
+}
+.registry table td img {
+	width: 300px;
+	padding: 15px;
+}
 /********LODGING****************/
 .hotel-link {
 	margin-top: 10px;
@@ -225,6 +232,7 @@ h1, h2, h3, h4, h5, h6 {
 .gallery .slideshow {
 	margin: auto;
 	float: inherit;
+	padding: 10px 0;
 }
 
 /********WEDDING PARTY STYLES****/
