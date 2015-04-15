@@ -76,13 +76,13 @@ if (Meteor.isClient) {
       _(mealGuests).each(function (v, k) { formattedMeals += v + (k === mealGuests.length ? '' : ', ')});
 
       var isEmail = validator.isEmail(email),
-          isName = validator.isAlpha(fullname);
+          isName = fullname != '';
 
       if (!(isEmail && isName)) {
-        if (fullname == '') {
+        if (isName) {
           template.$('.required:first').removeClass('hide');
         } else {
-          template.$('.required:first').text('* Is that your real name?').removeClass('hide');
+          template.$('.required:first').text('* Please enter your name').removeClass('hide');
         }
         if (email == '') {
           template.$('.required:last').removeClass('hide');
@@ -91,9 +91,6 @@ if (Meteor.isClient) {
         }
         if (isEmail) {
           template.$('.required:last').addClass('hide');
-        }
-        if (isName) {
-          template.$('.required:first').addClass('hide');
         }
       } else {
         template.$('.required:visible').addClass('hide');
