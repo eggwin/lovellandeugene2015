@@ -102,6 +102,7 @@ if (Meteor.isClient) {
                     'Hello!\nAn invitee has RSVP\'d. Response below.\nName: ' + fullname
                         + '\nEmail: ' + email 
                         + '\nAttending? ' + attendance
+                        + '\nMeal Preference: ' + mealMain
                         + '\nNumber of Guests: ' + numberGuests
                         + '\nGuest Names: ' + formattedNames
                         + '\nMeal Preferences (in order): ' + formattedMeals);
