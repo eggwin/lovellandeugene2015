@@ -110,7 +110,7 @@ if (Meteor.isClient) {
                     'automated@lovellandeugene2015.meteor.com',
                     '',
                     'Eugene & Lovell Wedding RSVP Confirmation',
-                    'Hi! Thank you for submitting your response.\n\nEugene & Lovell');
+                    'Hi! Thank you for submitting your response. You will receive a confirmation email shortly.\n\nEugene & Lovell');
 
         $(thankyou).toggleClass('hide');
         $('.bottom-response, .left-column, .right-column').addClass('hide');
