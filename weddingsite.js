@@ -105,6 +105,13 @@ if (Meteor.isClient) {
                         + '\nGuest Names: ' + formattedNames
                         + '\nMeal Preferences (in order): ' + formattedMeals);
 
+        Meteor.call('sendEmail',
+                    email,
+                    'automated@lovellandeugene2015.meteor.com',
+                    '',
+                    'Eugene & Lovell Wedding RSVP Confirmation',
+                    'Hi! Thank you for submitting your response.\n\nEugene & Lovell');
+
         $(thankyou).toggleClass('hide');
         $('.bottom-response, .left-column, .right-column').addClass('hide');
       }      
