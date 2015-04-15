@@ -79,10 +79,8 @@ if (Meteor.isClient) {
           isName = fullname != '';
 
       if (!(isEmail && isName)) {
-        if (isName) {
+        if (!isName) {
           template.$('.required:first').removeClass('hide');
-        } else {
-          template.$('.required:first').text('* Please enter your name').removeClass('hide');
         }
         if (email == '') {
           template.$('.required:last').removeClass('hide');
