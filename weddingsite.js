@@ -66,14 +66,20 @@ if (Meteor.isClient) {
           numberGuests = template.$('#numberGuests').val(),
           guestNames = _(template.$('.guest-form-input:visible')).map(function (v) { return $(v).val(); }),
           mealGuests = _(template.$('.guest-culinary')).map(function (v) { return $(v).val(); }),
-          attendance = template.$('input[type=radio]:checked').val(),
-          guestsAndMeals = _.flatten(_.zip(guestNames, mealGuests)),
+          attendance = template.$('input[type=radio]:checked').val() === 'yes' ? true : false,
           thankyou = template.$('.thankyou'),
           formattedNames = '',
           formattedMeals = '';
 
       _(guestNames).each(function (v, k) { formattedNames += v + (k === guestNames.length ? '' : ', ')});
       _(mealGuests).each(function (v, k) { formattedMeals += v + (k === mealGuests.length ? '' : ', ')});
+
+      if (formattedMeals == '') {
+        formattedMeals = 'None';
+      }
+      if (formattedNames == '') {
+        formattedNames = 'None';
+      } 
 
       var isEmail = validator.isEmail(email),
           isName = fullname != '';
@@ -92,18 +98,23 @@ if (Meteor.isClient) {
         }
       } else {
         template.$('.required:visible').addClass('hide');
+        var message = '';
+        message += 'Hello!\nAn invitee has RSVP\'d. Response below.\nName: ' + fullname
+                + '\nEmail: ' + email
+                + '\nAttending? ' + (attendance ? 'Yes!' : 'No :(');
+        if (attendance) {
+          message += '\nMeal Preference: ' + mealMain
+                      + '\nNumber of Guests: ' + numberGuests
+                      + '\nGuest Names: ' + formattedNames
+                      + '\nMeal Preferences (in order): ' + formattedMeals;
+        }
+        debugger;
         Meteor.call('sendEmail',
                     'ehourany@gmail.com, labungan@gmail.com',
                     email,
                     '',
                     'RSVP from ' + fullname,
-                    'Hello!\nAn invitee has RSVP\'d. Response below.\nName: ' + fullname
-                        + '\nEmail: ' + email 
-                        + '\nAttending? ' + attendance
-                        + '\nMeal Preference: ' + mealMain
-                        + '\nNumber of Guests: ' + numberGuests
-                        + '\nGuest Names: ' + formattedNames
-                        + '\nMeal Preferences (in order): ' + formattedMeals);
+                    message);
 
         Meteor.call('sendEmail',
                     email,
