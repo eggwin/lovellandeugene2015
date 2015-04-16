@@ -166,6 +166,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .slideshow .slick-slide img {
 	height: 600px;
+	margin: auto;
+}
+
+.slideshow .slick-slide .skinnier {
+	width: 600px;
+	margin: auto;
 }
 
 .groomsmen div span, .bridesmaids div span {
@@ -176,9 +182,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .groomsmen div img, .bridesmaids div img {
 	height: 300px;
-}
-
-.groomsmen.col-md-12, .bridesmaids.col-md-12 {
 }
 
 /********INDEX STYLES***********/
@@ -233,6 +236,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: auto;
 	float: inherit;
 	padding: 10px 0;
+}
+
+.gallery .slideshow p {
+	padding: 5px 0px;
+	background-color: #efefef;
+	color: #363636;
 }
 
 /********WEDDING PARTY STYLES****/
