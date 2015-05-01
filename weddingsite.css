@@ -42,6 +42,12 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: left;
 }
 
+.requiredLargeParty {
+	color: #FF0000;
+	padding-top: 10px;
+	text-align: left;
+}
+
 /********NAV STYLES*************/
 .wedding-nav {
 	border-top: 1px solid #fedbca;

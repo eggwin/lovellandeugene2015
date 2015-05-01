@@ -45,7 +45,8 @@ if (Meteor.isClient) {
         };
       } else if (numberGuests >= 6) {
         $(guestConstructor).append($('<h4>').addClass('normal').text('Please specify names & culinary preference for each person below'))
-                           .append($('<textarea rows="4">').addClass('form-control').attr('id', 'largeParty'));
+                           .append($('<textarea rows="4">').addClass('form-control').attr('id', 'largeParty'))
+                           .append($('<span>').addClass('col-md-12 row requiredLargeParty hide').text('* Required'));
       }
       $(guestForm).html(guestConstructor);
     },
@@ -68,6 +69,7 @@ if (Meteor.isClient) {
           mealGuests = _(template.$('.guest-culinary')).map(function (v) { return $(v).val(); }),
           attendance = template.$('input[type=radio]:checked').val() === 'yes' ? true : false,
           thankyou = template.$('.thankyou'),
+          largeParty = $('#largeParty:visible'),
           formattedNames = '',
           formattedMeals = '';
 
@@ -82,9 +84,13 @@ if (Meteor.isClient) {
       } 
 
       var isEmail = validator.isEmail(email),
-          isName = fullname != '';
+          isName = fullname != '',
+          isLargeParty = (largeParty.length) ? largeParty.val() != '' : true;
 
-      if (!(isEmail && isName)) {
+      if (!(isEmail && isName && isLargeParty)) {
+        if (!isLargeParty) {
+          template.$('.requiredLargeParty').removeClass('hide');
+        }
         if (!isName) {
           template.$('.required:first').removeClass('hide');
         }
@@ -97,16 +103,20 @@ if (Meteor.isClient) {
           template.$('.required:last').addClass('hide');
         }
       } else {
-        template.$('.required:visible').addClass('hide');
+        template.$('.required:visible, .requiredLargeParty:visible').addClass('hide');
         var message = '';
         message += 'Hello!\nAn invitee has RSVP\'d. Response below.\nName: ' + fullname
                 + '\nEmail: ' + email
                 + '\nAttending? ' + (attendance ? 'Yes!' : 'No :(');
         if (attendance) {
-          message += '\nMeal Preference: ' + mealMain
+          if (largeParty.length) {
+            message += '\nLarge Party requirements:\n' + largeParty.val();
+          } else {
+            message += '\nMeal Preference: ' + mealMain
                       + '\nNumber of Guests: ' + numberGuests
                       + '\nGuest Names: ' + formattedNames
                       + '\nMeal Preferences (in order): ' + formattedMeals;
+          }
         }
         debugger;
         Meteor.call('sendEmail',
