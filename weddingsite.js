@@ -17,7 +17,7 @@ if (Meteor.isClient) {
           message = template.$('#message').val();
 
       Meteor.call('sendEmail',
-                  'ehourany@gmail.com, labungan@gmail.com',
+                  'ehourany@gmail.com, labungan@gmail.com, beezybeets@yahoo.com',
                   email,
                   '',
                   'Message from ' + fullname,
