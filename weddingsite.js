@@ -120,7 +120,7 @@ if (Meteor.isClient) {
         }
         debugger;
         Meteor.call('sendEmail',
-                    'ehourany@gmail.com, labungan@gmail.com',
+                    'ehourany@gmail.com, labungan@gmail.com, beezybeets@yahoo.com',
                     email,
                     '',
                     'RSVP from ' + fullname,
