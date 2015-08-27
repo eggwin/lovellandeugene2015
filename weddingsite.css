@@ -277,3 +277,19 @@ h1, h2, h3, h4, h5, h6 {
 		float: inherit;
 	}
 }
+
+.wedding-party-top {
+	margin-bottom: 0;
+}
+
+.wedding-party-bottom {
+	margin-top: 0;
+	margin-bottom: -5px;
+}
+/*********RSVP***********/
+.no-top-margin {
+	margin-top: 0;
+}
+.some-bottom-margin {
+	margin-bottom: 50px;
+}
