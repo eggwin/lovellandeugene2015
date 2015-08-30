@@ -16,15 +16,20 @@ if (Meteor.isClient) {
           email = template.$('#emailaddress').val(),
           message = template.$('#message').val();
 
-      Meteor.call('sendEmail',
+      if (fullname.length && email.length && message.length) {
+        Meteor.call('sendEmail',
                   'ehourany@gmail.com, labungan@gmail.com, beezybeets@yahoo.com',
                   email,
                   '',
                   'Message from ' + fullname,
                   fullname + ' has submitted a message: \n' + message);
 
-      template.$('.thankyou').toggleClass('hide');
-      template.$('.form-horizontal').toggleClass('hide');
+        template.$('.thankyou').toggleClass('hide');
+        template.$('.form-horizontal').toggleClass('hide');
+        template.$('.fieldsrequired').addClass('hide');
+      } else {
+        template.$('.fieldsrequired').removeClass('hide');
+      }
 
       return false;
     }
