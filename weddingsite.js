@@ -123,7 +123,7 @@ if (Meteor.isClient) {
                       + '\nMeal Preferences (in order): ' + formattedMeals;
           }
         }
-        debugger;
+
         Meteor.call('sendEmail',
                     'ehourany@gmail.com, labungan@gmail.com, beezybeets@yahoo.com',
                     email,
@@ -136,7 +136,7 @@ if (Meteor.isClient) {
                     'automated@lovellandeugene2015.meteor.com',
                     '',
                     'Eugene & Lovell Wedding RSVP Confirmation',
-                    'Hi! Thank you for submitting your response.\n\nEugene & Lovell');
+                    'Hi! Thank you for submitting your response.\n\nPlease note that we\'re currently having issues with Yahoo! email addresses and might not have received your RSVP.\n\nIf you have a Yahoo! email address, please use a Gmail address since we know that works and try again.\n\nEugene & Lovell');
 
         $(thankyou).toggleClass('hide');
         $('.bottom-response, .left-column, .right-column').addClass('hide');
