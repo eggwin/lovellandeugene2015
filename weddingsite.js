@@ -63,6 +63,15 @@ if (Meteor.isClient) {
         template.$('.response-yes, .response-no, #guestSelect').toggleClass('hide');
       }
     },
+    "keyup #emailaddress": function (e, template) {
+      var lookforYahoos = /\w*@yahoo\.com/,
+          email = template.$('#emailaddress').val(),
+          isYahoo = lookforYahoos.exec(email);
+
+      if (isYahoo.length) {
+        template.$('.yahoo').removeClass('hide');
+      }
+    },
     "submit .rsvp-submit": function (e, template) {
       e.preventDefault();
       e.stopPropagation();
@@ -122,6 +131,13 @@ if (Meteor.isClient) {
                       + '\nGuest Names: ' + formattedNames
                       + '\nMeal Preferences (in order): ' + formattedMeals;
           }
+        }
+
+        var lookforYahoos = /\w*@yahoo\.com/,
+            isYahoo = lookforYahoos.exec(email);
+
+        if (isYahoo.length) {
+          template.$('.yahoo').removeClass('hide');
         }
 
         Meteor.call('sendEmail',
