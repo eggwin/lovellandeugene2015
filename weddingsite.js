@@ -65,8 +65,11 @@ if (Meteor.isClient) {
     },
     "keyup #emailaddress": function (e, template) {
       var lookforYahoos = /\w*@yahoo\.com/,
-          email = template.$('#emailaddress').val(),
-          isYahoo = lookforYahoos.exec(email);
+          email = template.$('#emailaddress').val(), isYahoo;
+
+      if (email.length) {
+        isYahoo = lookforYahoos.exec(email) || 0;
+      }
 
       if (isYahoo.length) {
         template.$('.yahoo').removeClass('hide');
