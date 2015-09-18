@@ -136,13 +136,6 @@ if (Meteor.isClient) {
           }
         }
 
-        var lookforYahoos = /\w*@yahoo\.com/,
-            isYahoo = lookforYahoos.exec(email);
-
-        if (isYahoo.length) {
-          template.$('.yahoo').removeClass('hide');
-        }
-
         Meteor.call('sendEmail',
                     'ehourany@gmail.com, labungan@gmail.com, beezybeets@yahoo.com',
                     email,
